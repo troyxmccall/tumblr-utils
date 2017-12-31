@@ -246,13 +246,10 @@ def save_style():
         css.write('''\
 @import url("override.css");
 
-body { width: 720px; margin: 0 auto; }
+body { width: auto; margin: 0 auto; }
 body > footer { padding: 1em 0; }
 header > img { float: right; }
-img { max-width: 720px; }
-blockquote { margin-left: 0; border-left: 8px #999 solid; padding: 0 24px; }
 .archive h1, .subtitle, article { padding-bottom: 0.75em; border-bottom: 1px #ccc dotted; }
-.post a.llink { display: none; }
 header a, footer a { text-decoration: none; }
 footer, article footer a { font-size: small; color: #999; }
 ''')
@@ -709,12 +706,12 @@ class TumblrPost:
         filetmpl = u'%(id)s_%(uploader_id)s_%(title)s.%(ext)s'
         ydl = youtube_dl.YoutubeDL({
             'outtmpl': join(self.media_folder, filetmpl),
-            'quiet': True, 
-            'restrictfilenames': True, 
+            'quiet': True,
+            'restrictfilenames': True,
             'noplaylist': True,
             'continuedl': True,
             'nooverwrites': True,
-            'retries': 3000,		
+            'retries': 3000,
             'fragment_retries': 3000,
             'ignoreerrors': True
         })
