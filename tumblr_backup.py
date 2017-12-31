@@ -317,7 +317,7 @@ class TumblrBackup:
             for year in sorted(self.index.keys(), reverse=options.reverse_index):
                 self.save_year(idx, year)
             idx.write(u'<footer><p>Generated on %s by <a href=https://github.com/'
-                'bbolli/tumblr-utils>tumblr-utils</a>.</p></footer>\n' % strftime('%x %X')
+                'troyxmccall/tumblr-utils>tumblr-utils</a>.</p></footer>\n' % strftime('%x %X')
             )
 
     def save_year(self, idx, year):
